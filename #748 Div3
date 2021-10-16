@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+#define endl "\n"
+using namespace std;
+ 
+int main(){
+ios_base::sync_with_stdio(false);
+ 
+int t_case;
+cin>>t_case;
+ 
+while (t_case--)
+{
+ 
+vector<int> votes;
+ 
+for (int i = 0; i < 3; i++)
+{
+int x;
+cin>>x;
+votes.push_back(x);
+}
+ 
+int maxx=*max_element(votes.begin(),votes.end());
+ 
+int flag=0;
+for (int i = 0; i < 3; i++)
+{
+	if(votes[i]==maxx)
+	flag++;
+}
+ 
+if(flag==1){
+ 
+for (int i = 0; i < 3; i++)
+{
+    if(votes[i]!=maxx)
+	cout<<(maxx-votes[i])+1<<" ";
+	else
+	cout<<"0 ";
+	
+ 
+}
+	cout<<endl;
+}
+ 
+else
+{
+	for (int i = 0; i < 3; i++)
+{
+ 
+	cout<<(maxx-votes[i])+1<<" ";
+}
+cout<<endl;
+}
+ 
+ 
+}
+ 
+return 0;
+}
